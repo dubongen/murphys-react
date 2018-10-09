@@ -5,8 +5,13 @@
 }
 
 .grad-background {
-  background: url('http://murphyshawaii.com/media/2014/04/murphys-front.jpg') no-repeat center center fixed;
+  background: url('http://murphyshawaii.com/media/2014/04/murphys-front.jpg') no-repeat center fixed;
   background-size: cover;
   height: 500px;
   padding-top: 150px;
+  color: white;
+}
+
+.footer-background {
+
 }

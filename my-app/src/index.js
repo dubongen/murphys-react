@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 import 'semantic-ui-css/semantic.min.css';
-import { Container, Dropdown, Menu, Icon, Grid, List, Image, Input, Button} from 'semantic-ui-react';
+import { Container, Dropdown, Menu, Icon, Grid, List, Image} from 'semantic-ui-react';
 
 
 class TopMenu extends React.Component {
@@ -11,19 +11,30 @@ class TopMenu extends React.Component {
         <Menu borderless className="topmenu">
           <Container>
             <Image src='http://murphyshawaii.com/media/2014/04/murphyshawaii.png'/>
-            <Menu.Item fitted><Icon name="facebook f" /></Menu.Item>
-            <Menu.Item fitted><Icon name="twitter" /></Menu.Item>
-            <Menu.Item fitted><Icon name="pinterest" /></Menu.Item>
-            <Menu.Item fitted><Icon name="instagram" /></Menu.Item>
 
-            <Menu.Item fitted position="right"><Icon name="home" /></Menu.Item>
-            <Menu.Item fitted><Icon name="search" /></Menu.Item>
-            <Menu.Item fitted><Icon name="user" /></Menu.Item>
-            <Dropdown text="MY CART 0" icon="shop">
+            <Menu.Item fitted position="right">Home</Menu.Item>
+
+            <Dropdown item text="About Us" icon="dropdown">
               <Dropdown.Menu>
-                <Dropdown.Item>My cart is currently empty.</Dropdown.Item>
+                <Dropdown.Item>Getting Here/Parking</Dropdown.Item>
+                <Dropdown.Item>Upcoming Events</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+
+            <Menu.Item fitted>St. Patrick’s Day</Menu.Item>
+
+            <Dropdown item text="Menus">
+              <Dropdown.Menu>
+                <Dropdown.Item>Lunch</Dropdown.Item>
+                <Dropdown.Item>Dinner</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <Menu.Item fitted>Bar</Menu.Item>
+
+            <Menu.Item><Icon name="search" /></Menu.Item>
+
+
           </Container>
         </Menu>
     )
@@ -32,49 +43,21 @@ class TopMenu extends React.Component {
 
 class MiddleMenu extends React.Component {
   render() {
+    const gridStyle = { height: "500px" };
     return (
-        <Menu borderless className="midmenu">
-          <Grid container centered columns={2}>
-            <Dropdown item text="MEN" icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Item>Tank Tops</Dropdown.Item>
-                <Dropdown.Item>Shirts</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+        <div className="grad-background">
+            <Grid container columns={2} style={gridStyle}>
+              <Grid.Column>
+                <Image src='http://murphyshawaii.com/media/2014/04/murphyshawaii.png'/>
+              </Grid.Column>
 
-            <Dropdown item text="WOMEN" icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Item>Tank Tops</Dropdown.Item>
-                <Dropdown.Item>Shirts</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-
-            <Dropdown item text="KIDS" icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Item>Shirts</Dropdown.Item>
-                <Dropdown.Item>Onesies</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-
-            <Dropdown item text="BRANDS" icon="dropdown">
-              <Dropdown.Menu>
-                <Dropdown.Item>Aloha Surf Project</Dropdown.Item>
-                <Dropdown.Item>Da Mokes</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-
-            <Menu.Item>SEARCH</Menu.Item>
-          </Grid>
-        </Menu>
-    )
-  }
-}
-
-class BackgroundImage extends React.Component {
-  render() {
-    return (
-        <BackgroundImage src='http://murphyshawaii.com/media/2014/04/murphys-front.jpg'/>
-
+              <Grid.Column>
+                <h2>
+                  <p>A traditional downtown saloon and eatery located in the Honolulu Financial District, just one block off the waterfront, Murphy’s has been a haven for mariners, businessmen and locals since 1891.</p>
+                </h2>
+              </Grid.Column>
+            </Grid>
+        </div>
     )
   }
 }
@@ -85,36 +68,29 @@ class FooterMenu extends React.Component {
         <div className="footer-background">
           <Grid container columns={3} fitted>
             <Grid.Column>
-              NAVIGATION
+              Lunch
               <hr/>
               <List>
-                <List.Item>About us</List.Item>
-                <List.Item>Videos</List.Item>
-                <List.Item>Store Locations</List.Item>
-                <List.Item>Shipping & Returns</List.Item>
-                <List.Item>Terms & Conditions</List.Item>
-                <List.Item>Privacy Policy</List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
               </List>
             </Grid.Column>
 
             <Grid.Column>
-              MAIN MENU
+              Bar
               <hr/>
               <List>
-                <List.Item>Men</List.Item>
-                <List.Item>Women</List.Item>
-                <List.Item>Kids</List.Item>
-                <List.Item>Brands</List.Item>
-                <List.Item>Search</List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
               </List>
             </Grid.Column>
 
             <Grid.Column>
-              CONNECT
+              Dinner
               <hr/>
               <List>
-                <List.Item>Sign up for the latest updates</List.Item>
-                <List.Item><Input placeholder="Enter email address" label={<Button color="black">Join</Button>} labelPosition="right"/></List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
+                <List.Item>Monday - Saturday:</List.Item>
               </List>
             </Grid.Column>
           </Grid>
@@ -130,7 +106,6 @@ class Murphys extends React.Component {
         <div>
           <TopMenu/>
           <MiddleMenu/>
-          <BackgroundImage/>
           <FooterMenu/>
         </div>
   );
